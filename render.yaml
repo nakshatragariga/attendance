@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-attendance-server
+    env: docker
+    rootDir: server
+    envVars:
+      - key: PORT
+        value: 8085
+
+  - type: web
+    name: ai-attendance-client
+    runtime: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: client/dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: ai-attendance-server
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
