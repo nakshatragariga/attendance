@@ -1,6 +1,7 @@
 services:
   - type: web
     name: ai-attendance-server
+    plan: free
     env: docker
     rootDir: server
     envVars:
@@ -9,6 +10,7 @@ services:
 
   - type: web
     name: ai-attendance-client
+    plan: free
     runtime: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
