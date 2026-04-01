@@ -8,10 +8,8 @@ services:
       - key: PORT
         value: 8085
 
-  - type: web
+  - type: static
     name: ai-attendance-client
-    plan: free
-    runtime: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
     envVars:
