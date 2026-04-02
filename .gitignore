@@ -1,0 +1,33 @@
+# Java/Spring Boot
+target/
+*.class
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE Specific
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Node (Client)
+client/node_modules/
+client/dist/
+
+# Database files
+*.db
+*.lock.db
+*.mv.db
+*.trace.db
+
+# Logs
+*.log
+*.txt
+
+# Project specific
+attendance_db/
+face-data/
