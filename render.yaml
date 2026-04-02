@@ -1,15 +1,15 @@
 services:
   - type: web
     name: ai-attendance-server
+    plan: free
     env: docker
     rootDir: server
     envVars:
       - key: PORT
         value: 8085
 
-  - type: web
+  - type: static
     name: ai-attendance-client
-    runtime: static
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
     envVars:
